@@ -8,8 +8,7 @@ class demoTools:
         self.demFolder = "./cs_demos/"
         self.parFolder = "./cs_demos_parsed/"
         self.parseRate = 128
-        self.player = ""
-
+        self.player = 0
         # Steam ID of player being processed
 
     def checkForParsed(self):
@@ -66,5 +65,5 @@ class demoTools:
 p1 = demoTools()
 data = p1.parseDemos()
 
-player_stats_json = player_stats(data[1]["gameRounds"])
-print(player_stats_json[76561198041883668])
+player_stats_json = player_stats(data[0]["gameRounds"])
+print(player_stats_json[p1.player])
